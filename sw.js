@@ -1,4 +1,4 @@
-const CACHE = 'a-ton-rythme-v78-assets-1';
+const CACHE = 'a-ton-rythme-v79-assets-1';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => {event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE))); self.skipWaiting();});
 self.addEventListener('activate', event => {event.waitUntil(Promise.all([caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('a-ton-rythme-') && k !== CACHE).map(k => caches.delete(k)))),self.clients.claim()]));});
