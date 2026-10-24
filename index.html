@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>À ton rythme — Zen de Luxe V71</title><meta name="theme-color" content="#f4f1e9">
+<title>À ton rythme</title><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icon-192.png"><meta name="application-name" content="À ton rythme"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#f4f1e9">
 <style>
 :root{--ink:#244a3e;--muted:#7d8b7f;--cream:#f5f2e9;--gold:#c6a66e;--line:#e8e8df;--card:#fffef9}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -1631,5 +1631,10 @@ function showDeleteGoalDialog(goal,onConfirm){
  render=function(){prevRender();renderLiveMissions()};
  renderLiveMissions();
 })();
+</script>
+<script>
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(err => console.warn('PWA hors ligne indisponible', err)));
+}
 </script>
 </body></html>
